@@ -38,13 +38,13 @@ The task is to create a **Cookie Stand Admin** app using this Next.js.
 ![Cookie Stand Admin Version 1](https://codefellows.github.io/seattle-code-python-401d24/class-37/lab/cookie-stand-admin-version-1.png)
 
 - The `pages/Index.js` should…
-  - [ ] Have `<Head>` component with **page title** set to `Cookie Stand Admin`
-  - [ ] Have a `<header>` component that matches the spec above.
-  - [ ] Have a `<main>` component containing `<form>` and a `placeholder` component showing **JSON string** of `last created Cookie Stand`.
-  - [ ] Have a `<footer>` component that matches the spec above.
+  - [x] Have `<Head>` component with **page title** set to `Cookie Stand Admin`
+  - [x] Have a `<header>` component that matches the spec above.
+  - [x] Have a `<main>` component containing `<form>` and a `placeholder` component showing **JSON string** of `last created Cookie Stand`.
+  - [x] Have a `<footer>` component that matches the spec above.
 
 - Styling:
-  - [ ] Style app using **TailwindCSS** ***utility*** ***classes***.
+  - [x] Style app using **TailwindCSS** ***utility*** ***classes***.
 
 #### Implementation
 
@@ -68,13 +68,22 @@ The task is to create a **Cookie Stand Admin** app using this Next.js.
 
 #### Stretch Goals
 
-- [ ] Refactor to move components to own functions.
-- [ ] Refactor to move components to own files.
-- [ ] Add more styling
+- [x] Refactor to move components to own functions.
+- [x] Refactor to move components to own files.
+- [x] Add more styling
 - [ ] Link to another page within the app
 
 ### Tests
 
 N/A
 
-### To run the app...
+## About `create-next-app`
+
+### Folder Structure
+
+- **`/app`**: Contains all the routes, components, and logic for your application, this is where you'll be mostly working from.
+- **`/app/lib`**: Contains **functions** used in your application, such as reusable **utility functions** and **data fetching functions**.
+- **`/app/ui`**: Contains all the **UI** **components** for your application, such as **cards**, **tables**, and **forms**.
+- **`/public`**: Contains all the **static** **assets** for your application, such as **images**.
+- **`/scripts`**: Contains a **seeding script** that you'll use to populate your **database**.
+- **Config Files**: You'll also notice config files such as `next.config.js` at the root of your application. Most of these files are created and pre-configured when you start a new project using `create-next-app`.

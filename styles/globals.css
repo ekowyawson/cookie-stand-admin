@@ -3,27 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: 17, 24, 39;
+  /* Dark text color for light mode */
   --background-start-rgb: 214, 219, 220;
+  /* Lighter background for light mode */
   --background-end-rgb: 255, 255, 255;
+  /* White background for light mode */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 229, 231, 235;
+    /* Lighter text color for dark mode */
+    --background-start-rgb: 31, 41, 55;
+    /* Darker background for dark mode */
+    --background-end-rgb: 17, 24, 39;
+    /* Even darker gradient end for dark mode */
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
