@@ -61,9 +61,10 @@ The task is to create a **Cookie Stand Admin** app using this Next.js.
 4. Strip out unused files
    - The app won’t break if they get left in, but it is good practice to remove files that you’re not using.
 
-- ***Pro tips:***
-  - Tailwind CSS Extension Pack
-  - React, Etc. Snippets
+##### Pro tips
+
+- Tailwind CSS Extension Pack
+- React, Etc. Snippets
 
 #### Stretch Goals
 
