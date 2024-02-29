@@ -2,6 +2,7 @@
 
 ## Project: Cookie Stand Admin
 
+- Version: 2.1
 - Author: Ekow Yawson
 
 ### Collaborators
@@ -34,14 +35,11 @@ The task is to create a **Cookie Stand Admin** app using this Next.js.
 
 ### Feature Tasks and Requirements
 
-- The spec for this lab is a screen shot of [Cookie Stand Admin Version 1](https://codefellows.github.io/seattle-code-python-401d24/class-37/lab/cookie-stand-admin-version-1.png)
-![Cookie Stand Admin Version 1](https://codefellows.github.io/seattle-code-python-401d24/class-37/lab/cookie-stand-admin-version-1.png)
-
 - The `pages/Index.js` should…
   - [x] Have `<Head>` component with **page title** set to `Cookie Stand Admin`
-  - [x] Have a `<header>` component that matches the spec above.
+  - [x] Have a `<header>` component that matches the **Spec**.
   - [x] Have a `<main>` component containing `<form>` and a `placeholder` component showing **JSON string** of `last created Cookie Stand`.
-  - [x] Have a `<footer>` component that matches the spec above.
+  - [x] Have a `<footer>` component that matches the **Spec**.
 
 - Styling:
   - [x] Style app using **TailwindCSS** ***utility*** ***classes***.
@@ -87,3 +85,75 @@ N/A
 - **`/public`**: Contains all the **static** **assets** for your application, such as **images**.
 - **`/scripts`**: Contains a **seeding script** that you'll use to populate your **database**.
 - **Config Files**: You'll also notice config files such as `next.config.js` at the root of your application. Most of these files are created and pre-configured when you start a new project using `create-next-app`.
+
+### Changelog
+
+#### Version 1.0
+
+***Spec***:
+
+![Cookie Stand Admin Version 1](https://codefellows.github.io/seattle-code-python-401d24/class-37/lab/cookie-stand-admin-version-1.png)
+
+- Initial build
+- Created `pages/Index.js` with
+  - `<Head>` component containing **page title** set to `Cookie Stand Admin`.
+  - `<header>` component that matches the **Spec** above.
+  - `<main>` component containing `<form>` and a `placeholder` component showing **JSON string** of `last created Cookie Stand`.
+  - `<footer>` component that matches the **Spec** above.
+- Styling:
+  - Implemented **TailwindCSS** ***utility*** ***classes***.
+
+#### Version 2.0
+
+***Spec-V2***:
+
+![Cookie Stand Admin Version 2](https://codefellows.github.io/code-401-python-guide/curriculum/class-38/lab/cookie-stand-admin-version-2.png)
+
+![Cookie Stand Admin No Stands](https://codefellows.github.io/code-401-python-guide/curriculum/class-38/lab/cookie-stand-admin-no-stands.png)
+
+- Modified `pages/Index.js` to return top level component: `<CookieStandAdmin>`
+- Modified `<CookieStandAdmin>` to contain the following components that match the **Spec-V2** above:
+  - `<Head>`
+  - `<Header>`
+  - `<main>`
+  - `<CreateForm>`
+  - `<ReportTable>`
+  - `<Footer>`
+- Imported and displayed **time slot data** from a static `data.js` file.
+- Modified `<CreateForm>` component details as follows:
+  - Object with `hourly_sales` property and hard coded `[48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]`
+- `<ReportTable>` details:
+  - If reports is empty, the User Interface (**UI**) renders: `<h2>No Cookie Stands Available</h2>`
+  - If reports is not empty, the UI renders a table with `thead`,`tbody` and `tfoot` components.
+- Modified components styling per the **Spec**.
+
+#### Version 2.1
+
+- Removed hard coding of `hourly_sales` data from the `<CreateForm>` component.
+  - Component now calculates hourly sales dynamically per cookie stand
+
+#### Version 3.0
+
+***Spec-V3***:
+
+![Cookie Stand Admin Version 3](https://codefellows.github.io/code-401-python-guide/curriculum/class-39/lab/cookie-stand-admin-version-3.png)
+
+![Cookie Stand Admin Login](https://codefellows.github.io/code-401-python-guide/curriculum/class-39/lab/cookie-stand-admin-login.png)
+
+1. `pages/index.js` should export a `<Home>` component.
+2. `<Home>` requirements:
+   - [ ] If a user is **NOT** logged in, then the `<LoginForm>` should render.
+   - [ ] If a user **IS** logged in, then the `<CookieStandAdmin>` component should render.
+3. `<LoginForm>` requirements:
+   - [ ] The component should receive a function passed in to call when form is submitted.
+   - [ ] The function should be called with `username` and `password` arguments.
+4. `<CookieStandAdmin>` requirements:
+   - [ ] When a user fills out the form to add a location, the data should be posted to an API.
+   - [ ] When the API response is complete, the `<CookieStandTable>` should render the latest data immediately.
+     - Should **NOT** require a page reload.
+5. [ ] `<CookieStandTable>` requirements:
+   - [ ] The component should continue to display the **Cookie Stand** info as in version 2.
+   - [ ] Add a `delete` icon in each stand’s location cell.
+   - [ ] Clicking the `delete` icon should immediately delete the Cookie Stand.
+     - Should **NOT** require a page reload.
+6. [ ] Style all components using TailwindCSS utility classes to match **Spec**.
