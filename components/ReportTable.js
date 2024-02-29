@@ -72,7 +72,7 @@ export default function ReportTable({ reports }) {
       </div>
 
       <div className={`flex flex-col items-center justify-between p-2 ${inter.className}`}>
-        <i><strong>Total Locations</strong>: {reports.length}</i>
+        <i><strong>Total Locations Worldwide</strong>: {reports.length}</i>
       </div>
     </>
   );
