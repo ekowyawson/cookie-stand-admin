@@ -18,7 +18,7 @@ export default function CookieStandAdmin({ onLogout }) {
     setReports([...reports, newReport]);
   };
 
-  // Function to handle delete (This part is new and assumes you have an endpoint to handle deletion)
+  // Function to handle delete
   const handleDelete = async (reportId) => {
     // Simulate delete request
     // await fetch(`/api/locations/${reportId}`, { method: 'DELETE' });

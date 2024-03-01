@@ -15,7 +15,7 @@ export default function Home() {
     if (token) {
       // Decode token to check if it's still valid
       const user = jwt.decode(token);
-      // If user is decoded successfully, consider them logged in
+      // If user is decoded successfully, their logged in
       if (user) setIsLoggedIn(true);
     }
   }, []);
@@ -46,7 +46,7 @@ export default function Home() {
   const handleLogout = () => {
     localStorage.removeItem('token'); // Log out by removing token
     setIsLoggedIn(false); // Update state to reflect logged-out status
-    setMessage('Successfully logged out.'); // Optionally, show a logout message
+    setMessage('Successfully logged out.'); // Show a logout message
   };
 
   const handleRegister = async (username, password, email) => {
@@ -60,8 +60,8 @@ export default function Home() {
       const data = await response.json();
       if (response.ok) {
         alert('Registration successful, please log in.');
-        setIsRegistering(false); // Switch to login form after successful registration
-        setMessage(''); // Clear any messages
+        setIsRegistering(false); // Show login form after successful registration
+        setMessage(''); // Clear messages
       } else {
         alert('Registration failed: ' + data.message);
       }

@@ -15,7 +15,7 @@ export default async function register(req, res) {
                 'INSERT INTO users(username, password_hash) VALUES($1, $2) RETURNING *',
                 [username, hashedPassword]
             );
-            return res.status(201).send({ user: result.rows[0] }); // Respond with the created user (excluding password_hash for security)
+            return res.status(201).send({ user: result.rows[0] });
         } catch (error) {
             return res.status(500).send('User registration failed');
         }
