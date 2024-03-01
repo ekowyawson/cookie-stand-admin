@@ -7,10 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      minHeight: {
+        'screen': '95vh',
+      },
       colors: {
-        'orange-1': '#eec890',
+        chartreuse: {
+          500: '#7FFF00', // Base chartreuse color
+          // Add other shades as needed
+        },
         'green-1': '#65a765',
         'green-2': '#90ee90',
+        'orange-1': '#eec890',
         'purple-1': '#9165a7',
         'purple-2': '#cf90ee',
       },

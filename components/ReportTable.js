@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function ReportTable({ reports }) {
+export default function ReportTable({ reports, onDelete }) {
+  
   const calculateHourlyTotals = (reports) => {
     const hourlyTotals = Array(timeSlots.length).fill(0);
     
@@ -43,7 +44,14 @@ export default function ReportTable({ reports }) {
           <tbody className="divide-y divide-white">
             {reports.map((report, index) => (
               <tr key={index} className={`${index % 2 ? ' bg-green-400' : 'bg-green-300'}`}>
-                <td className='pl-4 border-green-900 p-2'>{report.location}</td>
+                <td className='pl-4 border-green-900 p-2 flex justify-between items-center'>
+                  {report.location}
+                  <button onClick={() => onDelete(report.id)} className="text-red-500 hover:text-red-700">
+                    <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                  </button>
+                </td>
                 
                 {report.hourly_sales.map((sale, saleIndex) => (
                   <td key={saleIndex} className="border border-white pl-4 p-2">{parseFloat(sale).toFixed(1)}</td>
@@ -58,17 +66,14 @@ export default function ReportTable({ reports }) {
             <tr>
               <th className="border border-white p-2">Total</th>
 
-              {
-                getHourlyTotals.map((total, index) => (
+              {getHourlyTotals.map((total, index) => (
                   <td key={index} className="border border-white font-bold text-center p-2">{parseFloat(total).toFixed(1)}</td>
-                ))
-              }
+              ))}
 
               <td className="border border-white text-center font-bold p-2">{parseFloat(grandTotal).toFixed(1)}</td>
             </tr>
           </tfoot>
         </table>
-
       </div>
 
       <div className={`flex flex-col items-center justify-between p-2 ${inter.className}`}>
