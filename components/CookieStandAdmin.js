@@ -5,16 +5,28 @@ import ReportTable from './ReportTable';
 import Footer from './Footer';
 import { useState } from 'react';
 
-export default function CookieStandAdmin() {
+export default function CookieStandAdmin({ onLogout }) {
   const [reports, setReports] = useState([]);
 
-  const handleCreate = (formData) => {
-
+  const handleCreate = async (formData) => {
+    // Simulate an API POST request
     const newReport = { ...formData, id: reports.length + 1 };
+    // Normally, you'd await the response from your API here, but we'll simulate it
+    // const response = await fetch('/api/locations', { method: 'POST', body: JSON.stringify(newReport), headers: {'Content-Type': 'application/json'} });
+    // const data = await response.json();
+    // For simulation purposes, we're just adding it to the local state
     setReports([...reports, newReport]);
   };
 
-  return (
+  // Function to handle delete (This part is new and assumes you have an endpoint to handle deletion)
+  const handleDelete = async (reportId) => {
+    // Simulate delete request
+    // await fetch(`/api/locations/${reportId}`, { method: 'DELETE' });
+    // For simulation purposes, we're filtering it out from the local state
+    setReports(reports.filter(report => report.id !== reportId));
+  };
+
+   return (
     <>
       <Head>
         <title>Cookie Stand Admin</title>
@@ -22,7 +34,16 @@ export default function CookieStandAdmin() {
       <Header />
       <main>
         <CreateForm onCreate={handleCreate} />
-        <ReportTable reports={reports} />
+         
+        <ReportTable reports={reports} onDelete={handleDelete} />
+        
+        <div class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
+          <button
+            onClick={onLogout} className="px-4 py-2 font-bold text-white bg-blue-500 hover:bg-green-700 rounded hover:text-blue-800 transition duration-300 ease-in-out"
+          >
+            Logout
+          </button>
+        </div>
       </main>
       <Footer reportCount={reports.length} />
     </>
