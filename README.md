@@ -157,3 +157,27 @@ N/A
    - [ ] Clicking the `delete` icon should immediately delete the Cookie Stand.
      - Should **NOT** require a page reload.
 6. [ ] Style all components using TailwindCSS utility classes to match **Spec**.
+
+#### Implementation V3
+
+To run the application locally and integrate the login and registration function:
+
+1. Make sure you install the required packages by running `npm install`.
+
+    ```js
+    npm install
+    ```
+
+2. Create a `.env.local` file at the root of the project.
+3. Inside the `.env.local` file, add your Elephant SQL URL string and a JWT Secret:
+
+    ```config
+    AUTH_SECRET={JWT_SECRET}
+    ELEPHANTSQL_URL={ELEPHANT_SQL_URL_STRING}
+    ```
+
+4. Run your dev server:
+
+    ```js
+    npm run dev
+    ```
