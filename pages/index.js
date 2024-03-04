@@ -49,13 +49,13 @@ export default function Home() {
     setMessage('Successfully logged out.'); // Show a logout message
   };
 
-  const handleRegister = async (username, password, email) => {
+  const handleRegister = async (username, password, first_name, last_name, email) => {
     try {
       // Attempt to register
       const response = await fetch('/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password, email }),
+        body: JSON.stringify({ username, password, first_name, last_name, email }),
       });
       const data = await response.json();
       if (response.ok) {

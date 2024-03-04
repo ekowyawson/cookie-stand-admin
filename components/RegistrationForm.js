@@ -1,8 +1,8 @@
 export default function RegistrationForm({ onRegister }) {
     const handleSubmit = (event) => {
         event.preventDefault();
-        const { username, password, email } = event.target.elements;
-        onRegister(username.value, password.value, email.value);
+        const { username, password, first_name, last_name, email } = event.target.elements;
+        onRegister(username.value, password.value, first_name.value, last_name.value, email.value);
     };
 
     return (
@@ -21,6 +21,17 @@ export default function RegistrationForm({ onRegister }) {
                 <div>
                     <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
                     <input name="password" type="password" required placeholder="Password"
+                        className="w-full px-3 py-2 mt-1 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-green-400 focus:border-green-400 dark:bg-gray-700 dark:text-white" />
+                </div>
+
+                <div>
+                    <label htmlFor="first_name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">First Name</label>
+                    <input name="first_name" type="text" required placeholder="First Name"
+                        className="w-full px-3 py-2 mt-1 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-green-400 focus:border-green-400 dark:bg-gray-700 dark:text-white" />
+                </div>
+                <div>
+                    <label htmlFor="last_name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Last Name</label>
+                    <input name="last_name" type="text" required placeholder="Last Name"
                         className="w-full px-3 py-2 mt-1 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-green-400 focus:border-green-400 dark:bg-gray-700 dark:text-white" />
                 </div>
                 <div>

@@ -176,6 +176,13 @@ To run the application locally and integrate the login and registration function
     ELEPHANTSQL_URL={ELEPHANT_SQL_URL_STRING}
     ```
 
+    or
+
+    ```config
+    AUTH_SECRET={JWT_SECRET}
+    LOCAL_DB_URL={LOCAL_DB_URL_STRING}
+    ```
+
 4. Run your dev server:
 
     ```js

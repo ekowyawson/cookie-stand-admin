@@ -3,7 +3,7 @@ import { Pool } from 'pg';
 import { sign } from 'jsonwebtoken';
 
 const pool = new Pool({
-    connectionString: process.env.ELEPHANTSQL_URL
+    connectionString: process.env.LOCAL_DB_URL
 });
 
 export default async function login(req, res) {
