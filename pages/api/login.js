@@ -22,7 +22,7 @@ export default async function login(req, res) {
 
                 // Generate JWT token for authenticated user using the AUTH_SECRET from .env.local
                 const token = sign(
-                    { username: user.rows[0].username, id: user.rows[0].id },
+                    { username: user.rows[0].username, user_id: user.rows[0].user_id },
                     process.env.AUTH_SECRET,
                     { expiresIn: '1h' }
                 );
