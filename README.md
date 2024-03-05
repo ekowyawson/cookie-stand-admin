@@ -10,6 +10,11 @@
 - Stephanie Johnson
 - Latherio Kidd
 
+### Deployment URL's
+
+[Cookie-Stands-API](https://cookie-stands-api.vercel.app/)
+[Cookie-Stands-Admin](https://cookie-stand-admin-liart-ten.vercel.app/)
+
 ### Overview
 
 We have been working with Django for the last few labs. This time; however, we will be switching to the **Next.js** stack (which builds on top of React) and styling our app with Tailwind CSS.
